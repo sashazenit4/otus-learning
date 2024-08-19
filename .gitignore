@@ -12,3 +12,7 @@
 *.pdf
 
 /local/php_interface/vendor
+
+#Логи
+/logs/*
+*.log
