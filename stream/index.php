@@ -205,16 +205,18 @@ $APPLICATION->IncludeComponent(
 		'NUM_USERS' => '4',
 		'NAME_TEMPLATE' => '',
 		'SHOW_LOGIN' => 'Y',
-		'CACHE_TYPE' => 'A',
+		'CACHE_TYPE' => 'N',
 		'CACHE_TIME' => '86450',
 		'CACHE_DATE' => date('dmy'),
-		'SHOW_YEAR' => 'N',
+		'SHOW_YEAR' => 'Y',
 		'DETAIL_URL' => SITE_DIR.'company/personal/user/#USER_ID#/',
 		'DEPARTMENT' => '0',
 		'AJAX_OPTION_ADDITIONAL' => ''
 	]
 );?>
-
+<?php
+$APPLICATION->IncludeComponent('aholin:department.head.list', '', []);
+?>
 <?php
 if(CModule::IncludeModule('bizproc'))
 {
