@@ -11,7 +11,7 @@ class DealTable extends Crm\DealTable
     {
         $event = new Event('crm', 'OnBeforeCrmDealUpdate', ['DEAL_ID' => $primary, 'FIELDS' => $data]);
         $event->send();
-        $data = $event->getParameters();
+        $data = $event->getParameters()['FIELDS'];
         return parent::update($primary, $data);
     }
 }
