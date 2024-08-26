@@ -7,7 +7,7 @@ $dealFields = [
     'STAGE_ID' => 'C2:PREPARATION',
 ];
 $idDeal = 15;
-$updateResult = \Bitrix\Crm\DealTable::update($idDeal, $dealFields);
+$updateResult = \Aholin\Crm\DealTable::update($idDeal, $dealFields);
 
 if ($updateResult->isSuccess()) {
     echo 'Сделка успешно обновлена';
