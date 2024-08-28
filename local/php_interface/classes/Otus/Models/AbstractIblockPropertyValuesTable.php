@@ -58,7 +58,6 @@ abstract class AbstractIblockPropertyValuesTable extends DataManager
         $cache = Cache::createInstance();
         $cacheDir = 'iblock_property_map/'.static::IBLOCK_ID;
         $multipleValuesTableClass = static::getMultipleValuesTableClass();
-        static::initMultipleValuesTableClass();
 
         if ($cache->initCache(0, md5($cacheDir), $cacheDir)) {
             $map = $cache->getVars();
@@ -293,37 +292,12 @@ abstract class AbstractIblockPropertyValuesTable extends DataManager
      */
     private static function getMultipleValuesTableClass(): string
     {
-        $className = end(explode('\\', static::class));
+        $partsOfClassName = explode('\\', static::class);
+        $className = end($partsOfClassName);
         $namespace = str_replace('\\'.$className, '', static::class);
         $className = str_replace('Table', 'MultipleTable', $className);
 
         return $namespace.'\\'.$className;
     }
 
-    /**
-     * @return void
-     */
-    private static function initMultipleValuesTableClass(): void
-    {
-        $className = end(explode('\\', static::class));
-        $namespace = str_replace('\\'.$className, '', static::class);
-        $className = str_replace('Table', 'MultipleTable', $className);
-
-        if (class_exists($namespace.'\\'.$className)) {
-            return;
-        }
-
-        $iblockId = static::IBLOCK_ID;
-
-//         $php = <<<PHP
-// namespace $namespace;
-
-// class {$className} extends \Models\AbstractIblockPropertyMultipleValuesTable
-// {
-//     const IBLOCK_ID = {$iblockId};
-// }
-
-// PHP;
-//         eval($php);
-    }
 }
