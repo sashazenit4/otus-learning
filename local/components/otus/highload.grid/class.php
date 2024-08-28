@@ -103,9 +103,10 @@ class HighloadGrid extends \CBitrixComponent implements Controllerable
                 'select' => ['*'],
                 'order' => ['ID' => 'ASC'],
                 'filter' => $filter,
+                'count_total' => true,
             ]);
 
-            $nav->setRecordCount(1);
+            $nav->setRecordCount($colors->getCount());
 
             $preparedElements = [];
 
