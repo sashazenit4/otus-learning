@@ -1,7 +1,6 @@
 <?php if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 
 use Bitrix\Main\Engine\Contract\Controllerable;
-use Bitrix\Main\Data\Cache as Cache;
 use Bitrix\Main\UI\PageNavigation;
 use Bitrix\Main\Engine\CurrentUser;
 
@@ -77,7 +76,7 @@ class SampleGrid extends \CBitrixComponent implements Controllerable
 
     public function executeComponent()
     {
-        $cache = Cache::createInstance();
+        $cache = \Bitrix\Main\Data\Cache::createInstance();
 
         if ($cache->initCache($this->arParams['CACHE_TIME'], 'sampleGrid' . CurrentUser::get()->getId())) {
             $this->arResult = $cache->getVars();
@@ -129,6 +128,9 @@ class SampleGrid extends \CBitrixComponent implements Controllerable
                 'limit' => $nav->getLimit(),
                 'offset' => $nav->getOffset(),
                 'count_total' => true,
+                'cache' => [
+                    'ttl' => 3600,
+                ],
             ]);
 
             $nav->setRecordCount($books->getCount());
