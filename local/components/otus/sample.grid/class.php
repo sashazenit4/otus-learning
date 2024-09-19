@@ -78,6 +78,12 @@ class SampleGrid extends \CBitrixComponent implements Controllerable
     {
         $cache = \Bitrix\Main\Data\Cache::createInstance();
 
+        $request = \Bitrix\Main\Application::getInstance()->getContext()->getRequest();
+
+        if ($request['template'] === 'excel') {
+            $this->proceedExcel();
+        }
+
         if ($cache->initCache($this->arParams['CACHE_TIME'], 'sampleGrid' . CurrentUser::get()->getId())) {
             $this->arResult = $cache->getVars();
         } else {
@@ -204,5 +210,11 @@ class SampleGrid extends \CBitrixComponent implements Controllerable
     {
         $result = \Otus\Orm\BookTable::delete($id);
         return !empty($result);
+    }
+
+    private function proceedExcel()
+    {
+        $this->setTemplateName('excel'); // Установка шаблона 'excel'
+        $this->includeComponentTemplate(); // Подключение шаблона компонента
     }
 }
