@@ -5,4 +5,8 @@ if (file_exists(__DIR__ . '/classes/autoload.php')) {
     require_once __DIR__ . '/classes/autoload.php';
 }
 
-\Otus\Diagnostic\Helper::writeToLog('Hello, world!');
+if (file_exists(__DIR__ . '/vendor/autoload.php')) {
+    require_once __DIR__ . '/vendor/autoload.php';
+}
+
+\Bex\Monolog\MonologAdapter::loadConfiguration();

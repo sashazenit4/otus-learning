@@ -1,6 +1,7 @@
 {
     "require": {
         "guzzlehttp/guzzle": "^7.9",
-        "symfony/console": "@stable"
+        "symfony/console": "@stable",
+        "phpoffice/phpspreadsheet": "^2.0"
     }
 }
