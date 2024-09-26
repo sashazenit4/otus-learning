@@ -1,0 +1,29 @@
+<?
+$MESS["INTR_ISL_PARAM_FIRST_DAY_0"] = "неділя";
+$MESS["INTR_ISL_PARAM_FIRST_DAY_2"] = "вівторок";
+$MESS["INTR_ABSC_PARAM_VIEW_day"] = "день";
+$MESS["INTR_ABSC_PARAM_CALENDAR_IBLOCK_ID"] = "Інфоблок з календарями співробітників";
+$MESS["INTR_ABSC_PARAM_DAY_FINISH"] = "Кінець робочого дня, година";
+$MESS["INTR_ABSC_PARAM_VIEW_month"] = "місяць";
+$MESS["INTR_ABSC_PARAM_DAY_START"] = "Початок робочого дня (година)";
+$MESS["INTR_ABSC_PARAM_VIEW_START"] = "Початкове подання";
+$MESS["INTR_ABSC_PARAM_VIEW_week"] = "тиждень";
+$MESS["INTR_ABSC_PARAM_FILTER_CONTROLS"] = "Відображувані елементи управління";
+$MESS["INTR_ISL_PARAM_NAME_TEMPLATE"] = "Відображення імені";
+$MESS["INTR_ABSC_GROUP_FILTER"] = "Параметри фільтра";
+$MESS["INTR_ISL_PARAM_FIRST_DAY"] = "Перший день тижня";
+$MESS["INTR_ABSC_PARAM_FILTER_CONTROLS_DATEPICKER"] = "перехід до дати";
+$MESS["INTR_ABSC_PARAM_FILTER_CONTROLS_DEPARTMENT"] = "Підрозділ";
+$MESS["INTR_ABSC_PARAM_DAY_SHOW_NONWORK"] = "Показувати неробочий час у денному поданні";
+$MESS["INTR_ISL_PARAM_FIRST_DAY_1"] = "понеділок";
+$MESS["INTR_ISL_PARAM_FIRST_DAY_5"] = "п'ятниця";
+$MESS["INTR_ISL_PARAM_FIRST_DAY_3"] = "середа";
+$MESS["INTR_ABSC_PARAM_DETAIL_URL"] = "Сторінка детального перегляду";
+$MESS["INTR_ISL_PARAM_FIRST_DAY_6"] = "субота";
+$MESS["INTR_ABSC_PARAM_CALENDAR_IBLOCK_TYPE"] = "Тип інфоблоку з календарями співробітників";
+$MESS["INTR_ABSC_PARAM_FILTER_CONTROLS_TYPEFILTER"] = "типи відсутностей";
+$MESS["INTR_ABSC_PARAM_FILTER_CONTROLS_SHOW_ALL"] = "тільки відсутні";
+$MESS["INTR_ABSC_PARAM_DATE_FORMAT"] = "Формат показу дати";
+$MESS["INTR_ABSC_PARAM_DATETIME_FORMAT"] = "Формат показу дати/часу";
+$MESS["INTR_ISL_PARAM_FIRST_DAY_4"] = "четвер";
+?>

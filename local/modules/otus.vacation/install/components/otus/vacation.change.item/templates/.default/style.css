@@ -1,0 +1,238 @@
+.vacation-period {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+#vacation_periods_elements > div > div {
+    margin-bottom: 5px;
+}
+
+.ui-slider-content-box {
+    padding: 40px;
+}
+
+.vacation__close-icon {
+    background-image: url('img/close.svg');
+    background-position: center;
+    background-size: 16px auto;
+    background-repeat: no-repeat;
+    opacity: .75;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 40px;
+    position: absolute;
+    margin-top: 11px;
+}
+
+.vacation__info-icon {
+    background-image: url('img/info.svg');
+    background-position: center;
+    background-size: 16px auto;
+    background-repeat: no-repeat;
+    opacity: .75;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 70px;
+    position: absolute;
+    margin-top: 11px;
+}
+
+.vacation-request__wrapper {
+    padding: 30px;
+}
+
+.vacation-request__info {
+    margin-top: 15px;
+}
+
+.vacation-form {
+    padding-left: 20px !important;
+}
+
+.green-approve {
+    color: #719100;
+}
+
+.red-reject {
+    color: #d0021b;
+}
+
+.blue-alternative {
+    color: #1e8ec2;
+}
+
+.item__action {
+    margin-left: 15px;
+}
+
+.item__underline {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+.description__wrapper {
+    margin-top: 25px;
+}
+
+.button-wrapper__modal {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 10px;
+    width: 300px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+
+.textarea__modal {
+    width: 435px;
+    height: 240px;
+    resize: none;
+}
+
+.textarea__title {
+    margin-top: 20px;
+}
+
+.vacation-period-add {
+    margin-top: 20px;
+}
+
+.bottom-buttons {
+    -webkit-box-shadow: 0 -2px 4px 0 #c6c9cb;
+            box-shadow: 0 -2px 4px 0 #c6c9cb;
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    padding: 15px;
+    background: #fff;
+    text-align: left;
+}
+
+.task__wrapper {
+    padding: 15px 15px 20px;
+    background-color: #fff;
+    margin-bottom: 68px;
+    border-radius: var(--ui-border-radius-md);
+}
+
+.ui-alert {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 320px;
+    margin-left: 40px;
+}
+
+.alert-box__text {
+    text-align: left;
+}
+
+.message__block {
+    margin-top: 20px;
+}
+
+.employee-title {
+    size: 22px;
+    font-weight: bold;
+}
+
+.approval_log-wrapper {
+    padding-left: 20px;
+}
+
+.form-section__title {
+    color: #525c69;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.vacation__items {
+    width: 420px;
+    margin: auto;
+}
+
+.vacation__item {
+    margin-left: 40px;
+    margin-top: 5px;
+}
+
+.ui-ctl {
+    display: inline-block !important;
+}
+
+.create-button__wrapper {
+    text-align: center;
+}
+
+#APPROVAL_LOG_TABLE_WRAPPER table {
+    border-spacing: 5px;
+    width: 100%;
+    margin-top: 2%;
+}
+
+#APPROVAL_LOG_TABLE_WRAPPER td {
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #e8ecee;
+    font-size: 14px;
+    white-space: nowrap;
+    background: #d12527;
+    cursor: pointer;
+    color: white;
+}
+
+.head {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.approval__comments {
+    margin-top: 40px;
+}
+
+.approve-log {
+    color: #719100;
+}
+
+.undefined-log {
+    color: #525c69;
+}
+
+.decision {
+    color: #525c69;
+}
+
+.vacation-days_count {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.days-count {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 10px;
+    position: absolute;
+    margin-top: 10px;
+}

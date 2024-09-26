@@ -1,0 +1,29 @@
+<?
+$MESS["INTR_ABSC_GROUP_FILTER"] = "Paramètres du filtre";
+$MESS["INTR_ABSC_PARAM_CALENDAR_IBLOCK_ID"] = "Bloc d'information avec les calendriers des employés";
+$MESS["INTR_ABSC_PARAM_CALENDAR_IBLOCK_TYPE"] = "Type du bloc d'information avec les calendriers des employés";
+$MESS["INTR_ABSC_PARAM_DATETIME_FORMAT"] = "Format d'affichage de la date/heure";
+$MESS["INTR_ABSC_PARAM_DATE_FORMAT"] = "Format d'affichage de la date";
+$MESS["INTR_ABSC_PARAM_DAY_FINISH"] = "Fin de la journée de travail (heures)";
+$MESS["INTR_ABSC_PARAM_DAY_SHOW_NONWORK"] = "Afficher les heures chômées par jour";
+$MESS["INTR_ABSC_PARAM_DAY_START"] = "Commencement de la journée de travail (heure)";
+$MESS["INTR_ABSC_PARAM_DETAIL_URL"] = "Page de l'examen détaillé";
+$MESS["INTR_ABSC_PARAM_FILTER_CONTROLS"] = "Afficher la section des boutons de commandes";
+$MESS["INTR_ABSC_PARAM_FILTER_CONTROLS_DATEPICKER"] = "Passage à la date";
+$MESS["INTR_ABSC_PARAM_FILTER_CONTROLS_DEPARTMENT"] = "Départements";
+$MESS["INTR_ABSC_PARAM_FILTER_CONTROLS_SHOW_ALL"] = "Uniquement des absents";
+$MESS["INTR_ABSC_PARAM_FILTER_CONTROLS_TYPEFILTER"] = "Types des absences";
+$MESS["INTR_ABSC_PARAM_VIEW_START"] = "Représentation initiale";
+$MESS["INTR_ABSC_PARAM_VIEW_day"] = "jour";
+$MESS["INTR_ABSC_PARAM_VIEW_month"] = "mois";
+$MESS["INTR_ABSC_PARAM_VIEW_week"] = "pour une semaine";
+$MESS["INTR_ISL_PARAM_FIRST_DAY"] = "Début de la semaine";
+$MESS["INTR_ISL_PARAM_FIRST_DAY_0"] = "Dimanche";
+$MESS["INTR_ISL_PARAM_FIRST_DAY_1"] = "Lundi";
+$MESS["INTR_ISL_PARAM_FIRST_DAY_2"] = "Mardi";
+$MESS["INTR_ISL_PARAM_FIRST_DAY_3"] = "mercredi";
+$MESS["INTR_ISL_PARAM_FIRST_DAY_4"] = "Jeudi";
+$MESS["INTR_ISL_PARAM_FIRST_DAY_5"] = "vendredi";
+$MESS["INTR_ISL_PARAM_FIRST_DAY_6"] = "Samedi";
+$MESS["INTR_ISL_PARAM_NAME_TEMPLATE"] = "Affichage du nom";
+?>
