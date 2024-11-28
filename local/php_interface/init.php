@@ -6,3 +6,5 @@ if (file_exists(__DIR__ . '/classes/autoload.php')) {
 }
 
 \Otus\Diagnostic\Helper::writeToLog('Hello, world!');
+
+\Bitrix\Main\EventManager::getInstance()->addEventHandler('', 'ColorsOnDelete', ['\Otus\Highload\Handler', 'onColorAdd']);
