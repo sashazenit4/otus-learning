@@ -664,6 +664,14 @@ $arUrlRewrite=array (
     'PATH' => '/marketing/ads.php',
     'SORT' => 100,
   ),
+  126 => 
+  array (
+    'CONDITION' => '#^/calendar/open/#',
+    'RULE' => '',
+    'ID' => 'bitrix:calendar.open-events',
+    'PATH' => '/calendar/open_events.php',
+    'SORT' => 100,
+  ),
   14 => 
   array (
     'CONDITION' => '#^/mobile/webdav#',
@@ -806,6 +814,14 @@ $arUrlRewrite=array (
     'RULE' => '',
     'ID' => '',
     'PATH' => '/crm/webform/index.php',
+    'SORT' => 100,
+  ),
+  127 => 
+  array (
+    'CONDITION' => '#^/desktop/menu#',
+    'RULE' => '',
+    'ID' => '',
+    'PATH' => '/desktop_menu/index.php',
     'SORT' => 100,
   ),
   32 => 

@@ -155,6 +155,13 @@ elseif (isset($_GET["blog"]) && $_GET["blog"] === "Y")
 	$filter = "blog";
 }
 
+$analytics = [
+	'data-analytics' => [
+		'c_section' => 'feed',
+		'c_element' => 'title_click',
+	],
+];
+
 $APPLICATION->IncludeComponent("bitrix:mobile.socialnetwork.log.ex", ".default", array(
 		"GROUP_ID" => intval($_GET["group_id"] ?? 0),
 		"LOG_ID" => intval($_GET["detail_log_id"] ?? 0),
@@ -172,12 +179,16 @@ $APPLICATION->IncludeComponent("bitrix:mobile.socialnetwork.log.ex", ".default",
 		'PATH_TO_TASKS_SNM_ROUTER' => SITE_DIR.'mobile/tasks/snmrouter/'
 			. '?routePage=__ROUTE_PAGE__'
 			. '&USER_ID=#USER_ID#'
-			. '&GROUP_ID=' . (int) $_GET['group_id']
+			. '&GROUP_ID=' . (int) ($_GET['group_id'] ?? null)
 			. '&LIST_MODE=TASKS_FROM_GROUP',
 		"SET_LOG_CACHE" => "Y",
 		"IMAGE_MAX_WIDTH" => 550,
-		"DATE_TIME_FORMAT" => ((intval($_GET["detail_log_id"]) > 0 || $_REQUEST["ACTION"] == "CONVERT") ? "j F Y G:i" : ""),
+		"DATE_TIME_FORMAT" => ((intval($_GET["detail_log_id"] ?? null) > 0 || ($_REQUEST["ACTION"] ?? null) == "CONVERT") ? "j F Y G:i" : ""),
 		"CHECK_PERMISSIONS_DEST" => "N",
+		"ATTRIBUTES" => [
+			'ANCHOR' => $analytics,
+			'TEXT_ANCHOR' => $analytics,
+		],
 	),
 	false,
 	Array("HIDE_ICONS" => "Y")
