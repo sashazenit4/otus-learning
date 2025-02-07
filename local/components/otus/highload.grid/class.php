@@ -7,7 +7,7 @@ use Bitrix\Main\UI\PageNavigation;
 use Bitrix\Main\Engine\CurrentUser;
 use Bitrix\Main\Loader;
 use Bitrix\Highloadblock as HL;
-use Bitrix\Main\Entity;
+use Bitrix\Main\Entity\Query;
 
 class HighloadGrid extends \CBitrixComponent implements Controllerable
 {
@@ -93,20 +93,33 @@ class HighloadGrid extends \CBitrixComponent implements Controllerable
 
             Loader::includeModule('highloadblock');
 
-            $hlbl = 2;
+            $dbHL = HL\HighloadBlockTable::getList([
+                'filter' => [
+                    'NAME' => 'Colors'
+                ],
+            ]);
+
+            if ($arItem = $dbHL->Fetch()) {
+                $hlId = $arItem['ID'];
+            }
+
+            $hlbl = $hlId;
             $hlblock = HL\HighloadBlockTable::getById($hlbl)->fetch();
 
             $entity = HL\HighloadBlockTable::compileEntity($hlblock);
             $entityClassName = $entity->getDataClass();
 
-            $colors = $entityClassName::getList([
-                'select' => ['*'],
-                'order' => ['ID' => 'ASC'],
-                'filter' => $filter,
-                'count_total' => true,
-            ]);
-
-            $nav->setRecordCount($colors->getCount());
+            $q = new Query($entityClassName);
+            $q->setSelect(array('*'));
+            $q->registerRuntimeField(
+                'RAND', [
+                    'data_type' => 'float',
+                    'expression' =>
+                    ['RAND()']
+                ]
+            );
+            $q->addOrder('RAND', 'ASC');
+            $colors = $q->exec();
 
             $preparedElements = [];
 
