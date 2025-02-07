@@ -6,6 +6,7 @@ BX.addCustomEvent('onTimeManWindowOpen', function () {
         closeIcon: {
             right: "20px", top: "10px"
         },
+        draggable: true,
         closeByEsc: true,
         overlay: {
             backgroundColor: 'red', opacity: '80'

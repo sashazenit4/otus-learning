@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CRM Button Installer</title>
+    <style>
+        #status {
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+    </style>
+    <script src="//api.bitrix24.com/api/v1/"></script>
+</head>
+<body>
+<div id="status"></div>
+<script>
+    let divStatus = document.querySelector('#status');
+
+    if (!BX24) {
+        divStatus.innerHTML = 'Библиотека Bitrix24 не найдена!';
+    } else {
+        divStatus.innerHTML += 'Приложение "Кнопка добавления в блэк-лист" устанавливается...';
+
+        BX24.init(async function () {
+            try {
+                await new Promise((resolve) => {
+                    BX24.callMethod('userfieldtype.delete', {
+                        'USER_TYPE_ID': 'blacklist_button',
+                    },
+                    function (res) {
+                        resolve(res);
+                    });
+                }).then(await new Promise((resolve, reject) => {
+                    BX24.callMethod('userfieldtype.add', {
+                        'USER_TYPE_ID': 'blacklist_button',
+                        'HANDLER': 'https://' + window.location.host + '/blacklist-button-app/app.php',
+                        'TITLE': 'Кнопка "В блэк лист"',
+                        'DESCRIPTION': 'Кнопка "В блэк лист" для лидов',
+                        'OPTIONS': {
+                            'height': 50,
+                        }
+                    }, function (res) {
+                        if (res.error()) {
+                            console.error('Ошибка при привязке кнопки:', res.error());
+                            reject(res.error());
+                        } else {
+                            console.log('Кнопка успешно привязана:', res);
+                            resolve();
+                        }
+                    });
+                }));
+
+                await new Promise((resolve, reject) => {
+                    BX24.callMethod('placement.get', {}, function (res) {
+                        if (res.error()) {
+                            console.error('Ошибка при получении плейсмента:', res.error());
+                            reject(res.error());
+                        } else {
+                            console.log('Плейсменты:', res);
+                            resolve();
+                        }
+                    });
+                });
+
+                BX24.installFinish();
+                divStatus.innerHTML += 'Установка приложения "Кнопка добавления в блэк-лист" завершена.';
+            } catch (error) {
+                divStatus.innerHTML += `Ошибка при установке приложения: ${error}`;
+                console.error('Ошибка при установке приложения:', error);
+            }
+        });
+    }
+</script>
+</body>
+</html>
